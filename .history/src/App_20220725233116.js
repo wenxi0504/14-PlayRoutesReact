@@ -15,10 +15,10 @@ function App() {
           <AllQuotes />
         </Route>
         <Route path="/quotes/:quoteId">
-          <QuoteDetail />
+          <NewQuote />
         </Route>
         <Route path="/new-quote">
-          <NewQuote />
+          <QuoteDetail />
         </Route>
       </Switch>
     </Layout>
