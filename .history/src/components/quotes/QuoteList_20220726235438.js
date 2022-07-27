@@ -35,7 +35,7 @@ const QuoteList = (props) => {
           Sort {isSortingAscending ? "Descending" : "Ascending"}
         </button>
         <ul className={classes.list}>
-          {sortedQuotes.map((quote) => (
+          {props.quotes.map((quote) => (
             <QuoteItem
               key={quote.id}
               id={quote.id}
