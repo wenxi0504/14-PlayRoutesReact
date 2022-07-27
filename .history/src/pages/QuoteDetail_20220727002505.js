@@ -21,18 +21,15 @@ const QuoteDetail = () => {
   return (
     <Fragment>
       <HighlightedQuote text={quote.text} author={quote.author} />
-      {/* <Route path={`/quotes/${params.quoteId}`} exact> */}
-      <Route path={match.path} exact>
+      <Route path={`/quotes/${params.quoteId}`} exact>
         <div className="centered">
-          {/* <Link className="btn--flat" to={`/quotes/${params.quoteId}/comments`}> */}
-          <Link className="btn--flat" to={`${match.url}/comments`}>
+          <Link className="btn--flat" to={`/quotes/${params.quoteId}/comments`}>
             Load Comments
           </Link>
         </div>
       </Route>
 
       {/* <Route path={`/quotes/${params.quoteId}/comments`}> */}
-      {/* path:'/quotes/:quotedId' */}
       <Route path={`${match.path}/comments`}>
         <Comments />
       </Route>

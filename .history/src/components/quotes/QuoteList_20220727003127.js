@@ -27,14 +27,7 @@ const QuoteList = (props) => {
 
   const changeSortingHanding = () => {
     // history.push("/quotes?sort=" + (isSortingAscending ? "desc" : "asc"));
-    // history.push(
-    //   `${location.pathname}?sort=${isSortingAscending ? "desc" : "asc"}`
-    // );
-    //alternative
-    history.push({
-      pathname: location.pathname,
-      search: `?sort=${isSortingAscending ? "desc" : "asc"}`,
-    });
+    history.push(`${location.path}${isSortingAscending ? "desc" : "asc"}`);
   };
   return (
     <Fragment>

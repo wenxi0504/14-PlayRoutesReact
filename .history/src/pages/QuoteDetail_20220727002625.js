@@ -24,8 +24,7 @@ const QuoteDetail = () => {
       {/* <Route path={`/quotes/${params.quoteId}`} exact> */}
       <Route path={match.path} exact>
         <div className="centered">
-          {/* <Link className="btn--flat" to={`/quotes/${params.quoteId}/comments`}> */}
-          <Link className="btn--flat" to={`${match.url}/comments`}>
+          <Link className="btn--flat" to={`/quotes/${params.quoteId}/comments`}>
             Load Comments
           </Link>
         </div>
