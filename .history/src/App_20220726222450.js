@@ -21,7 +21,6 @@ function App() {
         <Route path="/new-quote">
           <NewQuote />
         </Route>
-        {/* if there is not route matched */}
         <Route path="*">
           <NotFound />
         </Route>
