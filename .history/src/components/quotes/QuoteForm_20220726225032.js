@@ -6,7 +6,7 @@ import LoadingSpinner from "../UI/LoadingSpinner";
 import classes from "./QuoteForm.module.css";
 
 const QuoteForm = (props) => {
-  const [isEntering, setIsEntering] = useState(false);
+  const [isEntered, setIsEntering] = useState(false);
 
   const authorInputRef = useRef();
   const textInputRef = useRef();
@@ -22,9 +22,6 @@ const QuoteForm = (props) => {
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
   }
 
-  const finishEnteringHandler = () => {
-    setIsEntering(false);
-  };
   const formFocusedHandler = () => {
     setIsEntering(true);
     console.log("focus!");
@@ -32,10 +29,6 @@ const QuoteForm = (props) => {
 
   return (
     <Fragment>
-      <Prompt
-        when={isEntering}
-        message={(location) => "Are you sure you want to leave?"}
-      />
       <Card>
         <form
           onFocus={formFocusedHandler}
@@ -57,9 +50,7 @@ const QuoteForm = (props) => {
             <textarea id="text" rows="5" ref={textInputRef}></textarea>
           </div>
           <div className={classes.actions}>
-            <button onClick={finishEnteringHandler} className="btn">
-              Add Quote
-            </button>
+            <button className="btn">Add Quote</button>
           </div>
         </form>
       </Card>

@@ -6,7 +6,7 @@ const NewQuote = () => {
   const addQuoteHandler = (quoteData) => {
     console.log(quoteData);
     // push new page,will allow to go back
-    history.push("/quotes");
+    // history.push("/quotes");
   };
 
   return <QuoteForm onAddQuote={addQuoteHandler} />;
