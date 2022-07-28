@@ -38,7 +38,7 @@ const AllQuotes = () => {
   if (status === "completed" && (!loadedQuotes || loadedQuotes.length === 0)) {
     return <NoQuotesFound />;
   }
-  return <QuoteList quotes={loadedQuotes} />;
+  return <QuoteList quotes={DUMMY_QUOTES} />;
 };
 
 export default AllQuotes;

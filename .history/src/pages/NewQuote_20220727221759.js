@@ -7,20 +7,14 @@ const NewQuote = () => {
   const { sendRequest, status } = useHttp(addQuote);
   const history = useHistory();
 
-  useEffect(() => {
-    if (status === "completed") {
-      history.push("/quotes");
-      // // push new page,will allow to go back
-      // history.push("/quotes");
-    }
-  }, [status, history]);
+  useEffect(() => { }.[status];)
   const addQuoteHandler = (quoteData) => {
     console.log(quoteData);
+    // push new page,will allow to go back
+    history.push("/quotes");
   };
 
-  return (
-    <QuoteForm isLoading={status === "pending"} onAddQuote={addQuoteHandler} />
-  );
+  return <QuoteForm onAddQuote={addQuoteHandler} />;
   // push new page,will allow to go back
 };
 

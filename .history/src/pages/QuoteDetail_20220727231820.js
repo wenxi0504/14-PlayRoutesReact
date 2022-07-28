@@ -13,8 +13,6 @@ const QuoteDetail = () => {
   const match = useRouteMatch();
   console.log(match);
   const params = useParams();
-  const { quoteId } = params;
-
   const {
     sendRequest,
     status,
@@ -23,29 +21,14 @@ const QuoteDetail = () => {
   } = useHttp(getSingleQuote, true);
 
   // const quote = DUMMY_QUOTES.find((quote) => quote.id === params.quoteId);
-  useEffect(() => {
-    sendRequest(quoteId);
-  }, [sendRequest, quoteId]);
 
-  if (status === "pending") {
-    return (
-      <div className="centered">
-        <LoadingSpinner />
-      </div>
-    );
-  }
-
-  if (error) {
-    return <p className="centered">{error}</p>;
-  }
-
-  if (!loadedQuote.text) {
+  if (!quote) {
     return <p>no quote find!</p>;
   }
 
   return (
     <Fragment>
-      <HighlightedQuote text={loadedQuote.text} author={quote.author} />
+      <HighlightedQuote text={quote.text} author={quote.author} />
       {/* <Route path={`/quotes/${params.quoteId}`} exact> */}
       <Route path={match.path} exact>
         <div className="centered">

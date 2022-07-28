@@ -35,17 +35,13 @@ const QuoteDetail = () => {
     );
   }
 
-  if (error) {
-    return <p className="centered">{error}</p>;
-  }
-
-  if (!loadedQuote.text) {
+  if (!quote) {
     return <p>no quote find!</p>;
   }
 
   return (
     <Fragment>
-      <HighlightedQuote text={loadedQuote.text} author={quote.author} />
+      <HighlightedQuote text={quote.text} author={quote.author} />
       {/* <Route path={`/quotes/${params.quoteId}`} exact> */}
       <Route path={match.path} exact>
         <div className="centered">

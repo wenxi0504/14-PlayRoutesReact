@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import QuoteList from "../components/quotes/QuoteList";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 import { getAllQuotes } from "../lib/api";
-import NoQuotesFound from "../components/quotes/NoQuotesFound";
+import { useQ } from "../lib/api";
 import useHttp from "../hooks/use-http";
 
 // const DUMMY_QUOTES = [
@@ -26,7 +26,7 @@ const AllQuotes = () => {
   if (status === "pending") {
     return (
       <div className="centered">
-        <LoadingSpinner />
+        <loadingSpinner />
       </div>
     );
   }
@@ -38,7 +38,7 @@ const AllQuotes = () => {
   if (status === "completed" && (!loadedQuotes || loadedQuotes.length === 0)) {
     return <NoQuotesFound />;
   }
-  return <QuoteList quotes={loadedQuotes} />;
+  return <QuoteList quotes={DUMMY_QUOTES} />;
 };
 
 export default AllQuotes;
